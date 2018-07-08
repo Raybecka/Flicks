@@ -46,7 +46,8 @@ public class MovieActivity extends AppCompatActivity {
 
                 try {
                     movieJsonResults = response.getJSONArray("results");
-                    Movie.fromJSONArray(movieJsonResults);
+                    movies.addAll(Movie.fromJSONArray(movieJsonResults));
+                    movieAdapter.notifyDataSetChanged();
                     Log.d("DEBUG" , movies.toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -57,6 +58,8 @@ public class MovieActivity extends AppCompatActivity {
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
             }
+
+
         });
     }
 }
