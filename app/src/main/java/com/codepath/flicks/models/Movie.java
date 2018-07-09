@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Movie {
 
     public String getPosterPath() {
-        return String.format("https://image.tmdb.org/t/p/w342/%", posterPath);
+        return String.format("https://image.tmdb.org/t/p/w342/%s", posterPath);
     }
 
     public String getOriginalTitle() {
